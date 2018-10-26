@@ -1,1 +1,1 @@
-#This is an example of client and rever (POSIX sockets)
+#This is an example of client and server (POSIX sockets)
