@@ -19,9 +19,9 @@ void sort(int8_t arr[])
         {
             if(arr[j] > arr[j + 1])
             {
-                int8_t temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+                arr[j]     ^= arr[j + 1];
+                arr[j + 1] ^= arr[j];
+                arr[j]     ^= arr[j + 1];
             }
         }
     }
@@ -66,9 +66,10 @@ int8_t binarySearch(const int8_t arr[], int8_t find)
 int main()
 {
     int8_t arr[] = {0,9,4,7,2};
+    int8_t find = 7;
 
     sort(arr); /* execute sort before binarySearch */
-    int8_t position = binarySearch(arr, 22);
+    int8_t position = binarySearch(arr, find);
 
     if(position != NOT_FOUND)
     {
